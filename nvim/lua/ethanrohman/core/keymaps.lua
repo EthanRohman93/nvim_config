@@ -63,4 +63,4 @@ vim.keymap.set('n', '<leader>tp', "<cmd>lua _PYTHON_TOGGLE()<cr>", {})
 vim.keymap.set('n', '<leader>tf', "<cmd>ToggleTerm direction=float<cr>", {})
 vim.keymap.set('n', '<leader>th', "<cmd>ToggleTerm size=10 direction=horizontal<cr>", {})
 vim.keymap.set('n', '<leader>tv', "<cmd>ToggleTerm size=80 direction=vertical<cr>", {})
-
+vim.keymap.set("x", "<leader>p", [["_dP]])
