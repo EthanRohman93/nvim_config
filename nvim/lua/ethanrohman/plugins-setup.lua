@@ -77,6 +77,7 @@ return packer.startup(function(use)
             require("toggleterm").setup()
         end
   }
+  use { 'github/copilot.vim' }
   if packer_bootstrap then
     require("packer").sync()
   end
