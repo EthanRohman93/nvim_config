@@ -1,0 +1,71 @@
+Mode        || Keybind             || Description
+----------- || ------------------- || ------------------------------------------------------------
+Normal Mode || <leader>pf          || Opens Telescope to find files.
+Normal Mode || <C-p>               || Opens Telescope to find Git files.
+Normal Mode || <leader>ps          || Opens Telescope with a search prompt for grepping.
+Normal Mode || <leader>f           || Formats the buffer with LSP.
+Normal Mode || <leader>vws         || Opens LSP workspace symbol.
+Normal Mode || <leader>vd          || Opens diagnostic float.
+Normal Mode || <leader>vca         || Executes LSP code action.
+Normal Mode || gd                  || Executes LSP definition.
+Normal Mode || K                   || Executes LSP hover.
+Normal Mode || <C-d>               || Scrolls down and re-centers the screen.
+Normal Mode || <C-u>               || Scrolls up and re-centers the screen.
+Normal Mode || n                   || Searches forward and re-centers.
+Normal Mode || N                   || Searches backward and re-centers.
+Normal Mode || [d                  || Go to next diagnostic.
+Normal Mode || ]d                  || Go to previous diagnostic.
+Normal Mode || <C-k>               || Navigate between compiler errors.
+Normal Mode || <C-j>               || Navigate between compiler errors.
+Normal Mode || <leader>k           || Navigate between LSP diagnostics.
+Normal Mode || <leader>j           || Navigate between LSP diagnostics.
+Normal Mode || <leader>vrr         || Opens LSP references.
+Normal Mode || <leader>vrn         || Executes LSP rename.
+Normal Mode || <leader>s           || Global inline search and replace.
+Normal Mode || <leader>x           || Makes the current file executable.
+Normal Mode || <leader>p           || Deletes and pastes in Visual Block mode.
+Normal Mode || <leader>y           || Yanks to the clipboard.
+Normal Mode || <leader>d           || Deletes without affecting the default register.
+Normal Mode || Q                   || Disables the Ex mode key.
+Normal Mode || <C-f>               || Opens a new tmux session with tmux-sessionizer.
+Normal Mode || <leader>vpp         || Opens the Packer config file.
+Normal Mode || <leader>mr          || Executes make_it_rain in CellularAutomaton.
+Normal Mode || <leader><leader>    || Reloads the Vim source file.
+Normal Mode || gp                  || Paste and leave cursor at the end.
+Normal Mode || h                   || Move left.
+Normal Mode || j                   || Move down.
+Normal Mode || k                   || Move up.
+Normal Mode || l                   || Move right.
+Normal Mode || w                   || Move to the start of the next word.
+Normal Mode || b                   || Move to the start of the previous word.
+Normal Mode || e                   || Move to the end of the word.
+Normal Mode || G                   || Move to the end of the file.
+Normal Mode || gg                  || Move to the start of the file.
+Normal Mode || %                   || Move to the matching parenthesis or bracket.
+Normal Mode || *                   || Move to the next occurrence of the word under the cursor.
+Normal Mode || #                   || Move to the previous occurrence of the word under the cursor.
+Normal Mode || }                   || Move forward to the next empty line.
+Normal Mode || {                   || Move backward to the previous empty line.
+Normal Mode || f<char>             || Move to the next occurrence of the specified character on the line.
+Visual Mode || y                   || Copies code.
+Visual Mode || d                   || Delete highlighted.
+Visual Mode || J                   || Moves the selected block down.
+Visual Mode || K                   || Moves the selected block up.
+Visual Mode || ~                   || Switch Case.
+Visual Mode || ib                  || Mark inside "()".
+Visual Mode || (bdog)bdog          || (Description Needed)
+Insert Mode || <C-c>               || Exits insert mode.
+Insert Mode || <C-h>               || Executes LSP signature help.
+Harpoon     || <leader>a           || Add file.
+Harpoon     || Ctrl-h              || Navigate to file 1.
+Harpoon     || Ctrl-t              || Navigate to file 2.
+Harpoon     || Ctrl-n              || Navigate to file 3.
+Harpoon     || Ctrl-s              || Navigate to file 4.
+Telescope   || <C-k>               || Previous result.
+Telescope   || <C-j>               || Next result.
+Normal Mode || <leader>tn          || Toggles the node terminal.
+Normal Mode || <leader>tt          || Toggles the htop terminal.
+Normal Mode || <leader>tp          || Toggles the Python terminal.
+Normal Mode || <leader>tf          || Toggles floating terminal.
+Normal Mode || <leader>th          || Toggles horizontal terminal with size 10.
+Normal Mode || <leader>tv          || Toggles vertical terminal with size 80.
