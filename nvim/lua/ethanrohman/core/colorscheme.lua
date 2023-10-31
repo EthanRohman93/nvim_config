@@ -1,12 +1,11 @@
 function ColorMyPencils(color)
-	color = color or "tokyonight"
-	vim.cmd.colorscheme(color)
+  color = color or "nebulous"
+  vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 vim.cmd("autocmd VimEnter * lua ColorMyPencils()")
 
 ColorMyPencils()
-
