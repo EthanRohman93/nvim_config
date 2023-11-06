@@ -33,12 +33,13 @@ return packer.startup(function(use)
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
   use({
-	  'folke/tokyonight.nvim',
-	  as = "tokyonight",
-	  config = function()
-		  vim.cmd("colorscheme tokyonight-night")
-	  end
-  })  -- treesitter configuration
+	"Yagua/nebulous.nvim",
+	as = "nebulous",
+	config = function()
+		vim.cmd("colorscheme nebulous")
+	end
+  })
+-- treesitter configuration
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -57,6 +58,10 @@ return packer.startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use("tpope/vim-fugitive")
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -77,6 +82,7 @@ return packer.startup(function(use)
             require("toggleterm").setup()
         end
   }
+  use { 'github/copilot.vim' }
   if packer_bootstrap then
     require("packer").sync()
   end

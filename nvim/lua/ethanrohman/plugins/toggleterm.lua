@@ -1,3 +1,9 @@
+-- Define a custom highlight group for the border
+vim.cmd [[
+  highlight ToggleTermBorder guifg=orange guibg=#282c34
+]]
+
+-- Require toggleterm and set up its configuration
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
  return
@@ -16,16 +22,17 @@ toggleterm.setup({
  direction = "float",
  close_on_exit = true,
  shell = "fish",
-  float_opts = {
-    border = "curved",
-    winblend = 0,
-    highlights = {
-      border = "curved",
-      background = "curved",
-    }, 
-  },
+ float_opts = {
+   border = "single",  -- Changed to single border style
+   winblend = 0,
+   highlights = {
+     border = "ToggleTermBorder",
+     background = "Normal",
+   },
+ },
 })
 
+-- Define terminal keymaps
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
@@ -38,6 +45,7 @@ end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
+-- Define terminal toggle functions
 local Terminal = require("toggleterm.terminal").Terminal
 
 local node = Terminal:new({ cmd = "node", hidden = true })
@@ -51,3 +59,4 @@ local python = Terminal:new({ cmd = "python3", hidden = true })
 function _PYTHON_TOGGLE()
  python:toggle()
 end
+
