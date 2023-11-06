@@ -33,10 +33,10 @@ return packer.startup(function(use)
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
   use({
-	"Yagua/nebulous.nvim",
-	as = "nebulous",
+	"srcery-colors/srcery-vim",
+	as = "srcery",
 	config = function()
-		vim.cmd("colorscheme nebulous")
+		vim.cmd("colorscheme srcery")
 	end
   })
 -- treesitter configuration
