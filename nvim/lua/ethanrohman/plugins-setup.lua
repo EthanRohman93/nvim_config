@@ -82,7 +82,12 @@ return packer.startup(function(use)
             require("toggleterm").setup()
         end
   }
-  use { 'github/copilot.vim' }
+  use {
+    'luochen1990/rainbow',
+    config = function()
+        vim.g.rainbow_active = 1  -- Automatically activate rainbow
+    end
+  }
   if packer_bootstrap then
     require("packer").sync()
   end

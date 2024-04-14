@@ -1,5 +1,8 @@
 local opt = vim.opt 
 
+
+opt.guifont = "VictorMono:h12"
+
 --line numbers
 opt.relativenumber = true
 opt.number = true
@@ -35,9 +38,11 @@ opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
 
-opt.scrolloff = 8
+opt.scrolloff = 4
 opt.updatetime = 50
 opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 vim.cmd[[ hi Normal guibg=NONE ctermbg=NONE ]]
+
+

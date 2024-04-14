@@ -11,3 +11,4 @@ require("ethanrohman.plugins.lsp")
 require("ethanrohman.plugins-setup")
 require("ethanrohman.plugins.toggleterm")
 require('ethanrohman.plugins.copilot')
+
