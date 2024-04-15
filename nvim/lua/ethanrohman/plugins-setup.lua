@@ -33,10 +33,10 @@ return packer.startup(function(use)
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
   use({
-	"srcery-colors/srcery-vim",
-	as = "srcery",
+	"olimorris/onedarkpro.nvim",
+	as = "onedark",
 	config = function()
-		vim.cmd("colorscheme srcery")
+		vim.cmd("colorscheme onedark")
 	end
   })
 -- treesitter configuration

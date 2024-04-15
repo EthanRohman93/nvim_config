@@ -43,6 +43,4 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
-vim.cmd[[ hi Normal guibg=NONE ctermbg=NONE ]]
-
 

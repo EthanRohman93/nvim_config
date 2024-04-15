@@ -1,11 +1,12 @@
 function ColorMyPencils(color)
-  color = color or "srcery"
-  vim.cmd.colorscheme(color)
+  color = color or "onedark"
+  vim.cmd("colorscheme " .. color)
 
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  -- Ensure the background settings are reapplied every time the colorscheme changes
+  vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+  vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })  -- Non-current window
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })  -- Floating windows
 end
 
 vim.cmd("autocmd VimEnter * lua ColorMyPencils()")
-
-ColorMyPencils()
+vim.cmd("autocmd ColorScheme * :lua ColorMyPencils()")

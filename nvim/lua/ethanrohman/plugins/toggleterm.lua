@@ -6,30 +6,30 @@ vim.cmd [[
 -- Require toggleterm and set up its configuration
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
- return
+  return
 end
 
 toggleterm.setup({
- size = 20,
- open_mapping = [[<C-\>]],
- hide_numbers = true,
- shade_filetypes = {},
- shade_terminals = false,
- shading_factor = 2,
- start_in_insert = true,
- insert_mappings = true,
- persist_size = true,
- direction = "float",
- close_on_exit = true,
- shell = "fish",
- float_opts = {
-   border = "single",  -- Changed to single border style
-   winblend = 0,
-   highlights = {
-     border = "ToggleTermBorder",
-     background = "Normal",
-   },
- },
+  size = 20,
+  open_mapping = [[<C-\>]],
+  hide_numbers = true,
+  shade_filetypes = {},
+  shade_terminals = false,
+  shading_factor = 2,
+  start_in_insert = true,
+  insert_mappings = true,
+  persist_size = true,
+  direction = "float",
+  close_on_exit = true,
+  shell = "fish",
+  float_opts = {
+    border = "single",  -- Changed to single border style
+    winblend = 0,
+    highlights = {
+      border = "ToggleTermBorder",
+      background = "Normal",
+    },
+  },
 })
 
 -- Define terminal keymaps
@@ -45,18 +45,26 @@ end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
--- Define terminal toggle functions
+-- Define a general function to toggle terminals by ID
 local Terminal = require("toggleterm.terminal").Terminal
+_G.terminals = _G.terminals or {}
 
-local node = Terminal:new({ cmd = "node", hidden = true })
-
-function _NODE_TOGGLE()
- node:toggle()
+function _TOGGLE_TERMINAL_BY_ID(id, cmd)
+  if not _G.terminals[id] then
+    _G.terminals[id] = Terminal:new({
+      cmd = cmd,
+      hidden = true,
+      id = id,
+      on_exit = function(term)
+        print("Exited terminal " .. id .. " with exit code: " .. term.exit_code)
+      end
+    })
+  end
+  _G.terminals[id]:toggle()
 end
 
-local python = Terminal:new({ cmd = "python3", hidden = true })
-
-function _PYTHON_TOGGLE()
- python:toggle()
+-- Setup keybindings for different terminals
+for i = 1, 9 do
+  vim.api.nvim_set_keymap('n', '<leader>tf' .. i, "<cmd>lua _TOGGLE_TERMINAL_BY_ID(" .. i .. ", 'fish')<CR>", { noremap = true, silent = true, desc = "Toggle terminal " .. i })
 end
 
