@@ -1,0 +1,32 @@
+snippet cl "Class Definition"
+class ${1:ClassName} {
+    constructor(${2:parameters}) {
+        ${0}
+    }
+}
+endsnippet
+
+snippet fn "Function"
+function ${1:functionName}(${2:parameters}): ${3:void} {
+    ${0}
+}
+endsnippet
+
+
+snippet rfc "React Functional Component with Props"
+import React from 'react';
+
+type Props = {
+    ${2:key}: string;
+}
+
+const ${4:ComponentName} = ({ $2 }: Props) => {
+    return (
+		<div className=''>
+			${5:content}
+		</div>
+    );
+};
+
+export default $4;
+endsnippet

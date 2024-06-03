@@ -1,0 +1,9 @@
+snippet serv "Basic Service Template"
+service:
+  name: ${1:service_name}
+  replicas: ${2:3}
+  image: ${3:image_name}
+  ports:
+    - ${4:port}
+endsnippet
+

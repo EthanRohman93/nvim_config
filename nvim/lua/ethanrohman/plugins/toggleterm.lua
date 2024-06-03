@@ -65,6 +65,6 @@ end
 
 -- Setup keybindings for different terminals
 for i = 1, 9 do
-  vim.api.nvim_set_keymap('n', '<leader>tf' .. i, "<cmd>lua _TOGGLE_TERMINAL_BY_ID(" .. i .. ", 'fish')<CR>", { noremap = true, silent = true, desc = "Toggle terminal " .. i })
+  vim.api.nvim_set_keymap('n', '<leader>t' .. i, "<cmd>lua _TOGGLE_TERMINAL_BY_ID(" .. i .. ", 'fish')<CR>", { noremap = true, silent = true, desc = "Toggle terminal " .. i })
 end
 
